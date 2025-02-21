@@ -52,7 +52,7 @@ app.use(express.json());
 //   app.use(cors());
 // }
 app.use(cors({
-  origin: ["https://airbnb-fe-8288.onrender.com", "http://localhost:5173"], 
+  origin: ["https://airbnb-fe-8288.onrender.com", "http://localhost:5173", "https://airbnb-clone-frontend-ftw8.onrender.com"], 
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   credentials: true
 }));
