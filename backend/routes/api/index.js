@@ -68,9 +68,16 @@ router.post("/test", (req, res) => {
   router.get("/csrf/restore", (req, res) => {
     const csrfToken = req.csrfToken();
     res.cookie("XSRF-TOKEN", csrfToken);
-    res.status(200).json({
-      "XSRF-Token": csrfToken,
-    });
+    // res.status(200).json({
+    //   "XSRF-Token": csrfToken,
+    // });
+     // Attempt to set as cookie
+  res.cookie('XSRF-TOKEN', csrfToken, {
+    secure: true,
+    sameSite: 'None',
+    path: '/'
+  });
+  return res.json({ csrfToken });
   });
 
 
